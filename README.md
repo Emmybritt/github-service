@@ -64,6 +64,20 @@ Here is a list of the available npm scripts and what they do:
   npm run migrate:create --name create-commits-table
   ```
 
+  ### Function Explanations
+
+- **`indexRepository`** (`src/functions/indexGithubRepository.ts`):
+
+  This is the main function that starts the indexing process. It fetches repository information, saves it to the database, and retrieves commits starting from a specific date. The function also sets up a regular interval to check for new commits every hour.
+
+- **`fetchCommitsByRepoName`** (`src/functions/fetchCommitsByRepoName.ts`):
+
+  Fetches all commits for a given repository and prints them out. This can be useful for debugging or batch processing commits outside of the regular interval.
+
+- **`fetchTopAuthorCommitCounts`** (`src/functions/fetchTopAuthorCommitCounts.ts`):
+
+  Fetches the top N authors by commit count from the specified repository. This function is useful for analytics and reporting purposes.
+
 ## Testing
 
 Run tests using Jest: `npm test`.
