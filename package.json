@@ -1,0 +1,36 @@
+{
+  "name": "github-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles --runInBand",
+    "start": "npx ts-node src/functions/indexGithubRepository.ts",
+    "fetch:commitsByRepoName": "npx ts-node src/functions/fetchCommitsByRepoName.ts",
+    "fetch:topNAuthorCommitCounts": "npx ts-node src/functions/fetchTopAuthorCommitCounts.ts",
+    "migrate:create": "npx sequelize-cli migration:generate --name",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.1.0",
+    "axios": "^1.7.3",
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0",
+    "sequelize": "^6.37.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/jest": "^29.5.12",
+    "@types/uuid": "^10.0.0",
+    "jest": "^29.7.0",
+    "sequelize-mock": "^0.10.2",
+    "ts-jest": "^29.2.4"
+  }
+}
